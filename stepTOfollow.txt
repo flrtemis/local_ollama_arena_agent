@@ -1,0 +1,90 @@
+Use this file in the extracted project root:
+
+```text
+local_ollama_arena_agent/config.json
+```
+
+But note: the zip contains:
+
+```text
+config.example.json
+```
+
+So first copy it:
+
+### macOS/Linux
+
+```bash
+cd local_ollama_arena_agent
+cp config.example.json config.json
+```
+
+### Windows PowerShell
+
+```powershell
+cd .\local_ollama_arena_agent
+Copy-Item .\config.example.json .\config.json
+```
+
+Then open:
+
+```text
+config.json
+```
+
+Find this line:
+
+```json
+"model": "qwen2.5-coder:7b",
+```
+
+Change it to whatever Ollama model you want, for example:
+
+```json
+"model": "llama3.1:8b",
+```
+
+or:
+
+```json
+"model": "qwen2.5-coder:14b",
+```
+
+Then make sure you have that model pulled:
+
+```bash
+ollama pull llama3.1:8b
+```
+
+Then run:
+
+```bash
+python3 run.py
+```
+
+---
+
+Alternative: you can override it without editing any file:
+
+### macOS/Linux
+
+```bash
+OLLAMA_MODEL=llama3.1:8b python3 run.py
+```
+
+### Windows PowerShell
+
+```powershell
+$env:OLLAMA_MODEL="llama3.1:8b"
+py -3 run.py
+```
+
+---
+
+The default model is also hardcoded in:
+
+```text
+local_arena_agent/config.py
+```
+
+inside `DEFAULT_CONFIG`, but I **do not recommend editing that**. Use `config.json` or `OLLAMA_MODEL` instead.

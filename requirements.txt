@@ -1,0 +1,9 @@
+# Core project intentionally uses Python standard library only.
+# Python 3.10+ is recommended.
+#
+# External runtime services/tools are optional and configured separately:
+# - Ollama: required for local LLM chat/tool calling
+# - SearXNG or another search backend: optional for better web search
+# - AUTOMATIC1111/Forge/ComfyUI/local command: optional for image generation
+# - Piper/espeak/say/local command: optional for speech generation
+# - whisper.cpp/local command: optional for transcription

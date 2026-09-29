@@ -1,0 +1,46 @@
+{
+  "host": "127.0.0.1",
+  "port": 8765,
+  "ollama_chat_url": "http://127.0.0.1:11434/api/chat",
+  "model": "gemma4:26b",
+  "workspace": "./workspace",
+  "outputs": "./outputs",
+  "max_agent_steps": 10,
+  "auto_approve": false,
+  "send_uploaded_images_to_ollama": true,
+  "sandbox": {
+    "backend": "python",
+    "timeout_seconds": 20,
+    "output_limit_chars": 16000,
+    "max_command_chars": 5000,
+    "allow_network_in_python_backend": true,
+    "docker_image": "python:3.12-slim",
+    "docker_network": "none",
+    "docker_memory": "768m",
+    "docker_cpus": "1.0"
+  },
+  "web": {
+    "timeout_seconds": 15,
+    "max_bytes": 2000000,
+    "searxng_url": ""
+  },
+  "image_generation": {
+    "backend": "none",
+    "auto1111_url": "http://127.0.0.1:7860",
+    "command_template": ""
+  },
+  "video_generation": {
+    "backend": "none",
+    "command_template": ""
+  },
+  "speech_generation": {
+    "backend": "none",
+    "command_template": "",
+    "piper_executable": "piper",
+    "piper_voice": ""
+  },
+  "transcription": {
+    "backend": "none",
+    "command_template": ""
+  }
+}
